@@ -4,12 +4,14 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { SiteHeaderComponent } from './site-header/site-header.component';
 import { IssuesGridComponent } from './issues-grid/issues-grid.component';
+import { ItemIssueComponent } from './issues-grid/item-issue/item-issue.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SiteHeaderComponent,
-    IssuesGridComponent
+    IssuesGridComponent,
+    ItemIssueComponent
   ],
   imports: [
     BrowserModule
