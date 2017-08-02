@@ -1,10 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpModule, JsonpModule } from '@angular/http';
+
 
 import { AppComponent } from './app.component';
 import { SiteHeaderComponent } from './site-header/site-header.component';
 import { IssuesGridComponent } from './issues-grid/issues-grid.component';
 import { ItemIssueComponent } from './issues-grid/item-issue/item-issue.component';
+
+
 
 @NgModule({
   declarations: [
@@ -13,9 +17,7 @@ import { ItemIssueComponent } from './issues-grid/item-issue/item-issue.componen
     IssuesGridComponent,
     ItemIssueComponent
   ],
-  imports: [
-    BrowserModule
-  ],
+  imports:[ BrowserModule,HttpModule ],
   providers: [],
   bootstrap: [AppComponent]
 })

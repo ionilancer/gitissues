@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { RequestOptionsArgs,URLSearchParams} from '@angular/http';
+
 @Component({
   selector: 'app-issues-grid',
   templateUrl: './issues-grid.component.html',
@@ -10,6 +12,7 @@ export class IssuesGridComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+console.log(window.location.search.substr(1));
   }
 
 }
