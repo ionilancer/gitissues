@@ -21,6 +21,7 @@ export class AppComponent {
   rep:string;
   http:Http;
   input:Element;
+urlBusqueda:string;
 
   constructor(public _http : Http) {
   this.http=_http;
@@ -32,7 +33,7 @@ export class AppComponent {
   });
   }
   showResults(res){
-  console.log("showinf");
+
   var element =document.querySelector('.searchResults');
   var paginationEl = document.querySelector('.pagination');
   var totalPages =Math.ceil(this.totalIssues/5);
@@ -72,7 +73,9 @@ export class AppComponent {
   });
 
   var newValue="https://github.com/"+this.user+"/"+this.rep
-  this.input.setAttribute("value", newValue);
+
+  this.urlBusqueda=newValue;
+  window.history.pushState("object or string", "Title", "?u="+this.user+"&r="+this.rep);
   //console.log("daf",input.getAttribute("value"));
 
 
@@ -89,16 +92,14 @@ this.rep = this.rep.substr(this.rep.indexOf("=")+1,this.rep.length);
 this.input =(document.getElementById("system-search"));
 var btnBuscar= document.querySelector(".btn_buscarRep");
 document.querySelector(".searchForm").addEventListener('submit',(e)=>{
-console.log("event");
-console.dir(e.target);
 e.preventDefault();
-var newSearch = document.getElementById("system-search").getAttribute("value");
+var newSearch = this.urlBusqueda;
 if(newSearch){
 if(newSearch.lastIndexOf("/")+1==newSearch.length){
 newSearch = newSearch.substr(0,newSearch.lastIndexOf("/"));
 
 }
-console.log(newSearch);
+
 this.rep = newSearch.substr(newSearch.lastIndexOf("/")+1);
 
 this.user = newSearch.substr(newSearch.lastIndexOf(".com/")+5);
@@ -111,7 +112,7 @@ this.getIssues();
 this.page =1;
 
 var baseUrl = 'https://api.github.com/repos/'+this.user+'/'+this.rep+'/issues?state=all';
-console.log(baseUrl);
+
 this.result = {friends:[]}; this.http.get(baseUrl).map((res: Response) => res.json()).subscribe(res => { this.result = res;
 this.totalIssues= res.length;
 this.getIssues();

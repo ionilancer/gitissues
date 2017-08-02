@@ -1,7 +1,17 @@
 
 <div class="container">
 	<div class="row">
-    <app-site-header></app-site-header>
+		<div class="col-md-3">
+		    <form class="searchForm"action="#" method="get">
+		        <div class="input-group">
+		            <!-- USE TWITTER TYPEAHEAD JSON WITH API TO SEARCH -->
+		            <input [(ngModel)]="urlBusqueda" value =""class="form-control textoBusqueda" id="system-search" name="q" placeholder="Url de repositorio" required>
+		            <span class="input-group-btn">
+		                <button type="submit" class="btn btn-default btn_buscarRep"><i class="glyphicon glyphicon-search"></i></button>
+		            </span>
+		        </div>
+		    </form>
+		</div>
 		<app-issues-grid></app-issues-grid>
 	</div>
 </div>
