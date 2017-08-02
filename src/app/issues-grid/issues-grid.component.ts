@@ -12,7 +12,7 @@ export class IssuesGridComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-console.log(window.location.search.substr(1));
+
   }
 
 }

@@ -8,14 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class SiteHeaderComponent implements OnInit {
 
 
-  constructor() {console.log("hola header");
+  constructor() {
 
-  }
-  values="";
-
-
-  onKey(event:any) { // without type info
-    this.values += event.target.value + ' | ';
   }
   ngOnInit() {
   }

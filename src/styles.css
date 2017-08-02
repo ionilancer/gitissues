@@ -2,6 +2,14 @@
 @import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 .red{color: red;}
 .green{color:green;}
+.pagination {
+    float: right;
+}
+.pagination  li a.active {
+    background-color: #dedede;
+}
+
+
 html{}
 .navbar{position: relative;
 min-height: 0px;
