@@ -77,10 +77,7 @@ export class AppComponent {
 
 
   }
-  onSubmit(f: NgForm) {
-    console.log("eaafdfafdfds");
-}
-pageClick
+
   ngOnInit() {
 var location=window.location.search.substr(1);
 if (location){
@@ -96,7 +93,6 @@ console.log("event");
 console.dir(e.target);
 e.preventDefault();
 var newSearch = document.getElementById("system-search").getAttribute("value");
-console.log("afdfadfafd",document.getElementById("system-search").innerHTML );
 if(newSearch){
 if(newSearch.lastIndexOf("/")+1==newSearch.length){
 newSearch = newSearch.substr(0,newSearch.lastIndexOf("/"));
