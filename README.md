@@ -49,5 +49,7 @@ Clona el proyecto con `git clone https://github.com/ionilancer/gitissues.git` y 
 Inicia el proyecto con el comando `react-native start` 
 Compila el proyecto con el comando `react-native run-android` (recuerda que tienes que tener el SDK de android instalado y un dispositivo movil conectado mediante usb en modo depuración USB)
 
+Una vez tengas abierta la aplicación busca por la url de un repositorio de github `https://github.com/user/repo` para ver sus issues.
+
 
 
