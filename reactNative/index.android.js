@@ -21,14 +21,25 @@ export default class reactNative extends Component {
     this.issues=[];
   this.state = {
     text: 'Url de repostiorio...',
-    issues:  this.issues};
+    issues:  this.issues,
+  error:false};
   this.buscar=this.buscar.bind(this);
 }
 buscar(){
+let url = this.state.text;
+if(url){
+if(url.lastIndexOf("/")+1==url.length){
+url = url.substr(0,url.lastIndexOf("/"));
+}
+this.rep = url.substr(url.lastIndexOf("/")+1);
+this.user = url.substr(url.lastIndexOf(".com/")+5);
+this.user = this.user.substr(0,this.user.lastIndexOf("/"));
+}
 this.getUserAndRep();
 }
 getUserAndRep(){
-return fetch('https://api.github.com/repos/ionilancer/gitissues/issues?state=all')
+  let url = 'https://api.github.com/repos/'+this.user+'/'+this.rep+'/issues?state=all';
+return fetch(url)
 .then((response) => response.json()) .then((responseJson) => {
 var str = responseJson;
 let string="";
@@ -42,8 +53,8 @@ let string="";
     string+=this.issues[i].number;
   }
 
-  this.setState({  issues:  this.issues}); return responseJson; })
-.catch((error) => { console.error(error);  });
+  this.setState({ error:false, issues:  this.issues}); return responseJson; })
+.catch((error) => { this.setState({error:true});  });
 }
   render() {
     return (
@@ -58,7 +69,7 @@ let string="";
         title="Buscar"
         color="#2E64FE"
       />
-      <Issues data ={this.state.issues}/>
+      <Issues error={this.state.error}data ={this.state.issues}/>
 </View >
       );
   }

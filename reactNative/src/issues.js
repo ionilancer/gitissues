@@ -23,22 +23,20 @@ class Issues extends Component{
 
   render(){
 
-    if (this.props.data && this.props.data.length){
+    if (this.props.data && this.props.data.length && !this.props.error){
       var styles = StyleSheet.create({
         titulo: { fontSize:15},
         bold: { fontWeight:'bold'},
-        cabeceraTabla:{width:'30%',"alignSelf":'flex-start'}
+        cabeceraTabla:{fontWeight:'bold',"alignSelf":'flex-start',flexDirection:'column',},
+        contenedor:{  flexWrap: 'wrap',  alignItems: 'flex-start', flexDirection:'row',}
       });
       return(
         <View>
-                <Text style={[styles.titulo]} >Issues </Text>
+
         <View>
-        <Text style={[styles.cabeceraTabla]} >Nombre</Text>
-          <Text style={[styles.cabeceraTabla]} >Descripción</Text>
-            <Text style={[styles.cabeceraTabla]} >Estado</Text>
 
         {this.props.data.map( ( issue, i ) => {
-            return <Issue key={i} title={issue.title}/>
+            return <Issue key={i} state={issue.state} title={issue.title}/>
         } )}
         </View>
         </View>

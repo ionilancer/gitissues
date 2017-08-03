@@ -12,16 +12,19 @@ class Issue extends Component{
   }
 
   render(){
-    var styles = StyleSheet.create({ negrita: { fontWeight:"bold"}});
+    var styles = StyleSheet.create({
+      negrita: { fontWeight:"bold"},
+        rojo: { color:"red"},
+          verde: { color:"green"}
+    });
+
 
     return(
       <View>
-      <Text  style={[styles.negrita]}>{this.props.title}</Text>
+      {this.props.state=="closed" ?   <Text  style={[styles.negrita,styles.rojo ]}>{this.props.title}</Text> :   <Text  style={[styles.negrita,styles.verde]}>{this.props.title}</Text>}
+
       </View>
     )
-
-
-
   }
 }
 
