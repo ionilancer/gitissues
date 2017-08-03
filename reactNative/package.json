@@ -7,8 +7,10 @@
     "test": "jest"
   },
   "dependencies": {
+    "fixed-data-table": "^0.6.4",
     "react": "16.0.0-alpha.12",
     "react-native": "0.47.1",
+    "react-native-grid": "^0.1.1",
     "react-native-search-box": "0.0.9"
   },
   "devDependencies": {
