@@ -28,6 +28,7 @@ urlBusqueda:string;
   }
   getIssues(){
   var baseUrl = 'https://api.github.com/repos/'+this.user+'/'+this.rep+'/issues?state=all&page='+this.page+'&per_page=5';
+
   this.result = {friends:[]}; this.http.get(baseUrl).map((res: Response) => res.json()).subscribe(res => { this.result = res;
   this.showResults(res);
   });
@@ -88,7 +89,11 @@ this.user =  location.substr(location.indexOf("u"),location.indexOf("&"));
 this.user = this.user.substr(this.user.indexOf("=")+1,this.user.length);
 this.rep =  location.substr(location.indexOf("r"),location.length);
 this.rep = this.rep.substr(this.rep.indexOf("=")+1,this.rep.length);
+}else {
+this.user="ionilancer";
+this.rep="gitissues";
 }
+
 this.input =(document.getElementById("system-search"));
 var btnBuscar= document.querySelector(".btn_buscarRep");
 document.querySelector(".searchForm").addEventListener('submit',(e)=>{
