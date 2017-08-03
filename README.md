@@ -37,7 +37,7 @@ Busca  `https://github.com/ionilancer/gitissues` para ver las issues del reposit
 * React Native
   * instalacion: `npm install -g react-native-cli`
 * Android SDK
-  * [Más información] (https://facebook.github.io/react-native/releases/0.23/docs/android-setup.html)
+  * [Más información](https://facebook.github.io/react-native/releases/0.23/docs/android-setup.html)
   
 ## Instalar la aplicación
 Puesdes descargar la aplicación situada en el directorio [androd/app](https://github.com/ionilancer/gitissues/blob/master/reactNative/android/app/app-release.apk) recuerda permitir la instalación de aplicaciones de terceros en tu teléfono.
